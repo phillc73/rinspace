@@ -1,22 +1,24 @@
-# NASA Near Earth Object Feed
-# Retrieve a list of Asteroids based on their closest approach date to Earth.
+# NASA Space Sound Archive
+# Sound exists in space. Sometimes.
+#
+# Note that the download URLs in the returned object require soundcloud authentication to access the files.
+# This will likely change in the stable version of the API.
 #
 # Example:
-# neofeed <- nasaNeoFeed(nasaApiKey = "DEMO_KEY", startDate = "yyyy-mm-dd")
-# Parameter endDate defaults to seven days after startDate and cannot be more than seven days later.
+# sounds <- nasaSounds(query = "apollo", nasaApiKey = "DEMO_KEY")
 #
 # Obtain a NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-nasaNeoFeed <- function(nasaApiKey, startDate, endDate = "") {
+nasaSounds <- function(query = "", limit = "10", nasaApiKey) {
 
-  url = "https://api.nasa.gov/neo/rest/v1/feed?"
-  startDate = paste("start_date=", startDate, sep = "")
-  endDate = paste("&end_date=", endDate, sep = "")
+  url = "https://api.nasa.gov/planetary/sounds?"
+  query = paste("query=", query, sep = "")
+  limit = paste("&limit=", limit, sep = "")
   nasaApiKey = paste("&api_key=", nasaApiKey, sep = "")
 
   dataReturn <-
-    httr::GET(paste(url, startDate, endDate, nasaApiKey, sep = ""))
+    httr::GET(paste(url, query, limit, nasaApiKey, sep = ""))
 
   if (httr::status_code(dataReturn) != "200") {
     badReturn <-
@@ -31,5 +33,3 @@ nasaNeoFeed <- function(nasaApiKey, startDate, endDate = "") {
     jsonlite::fromJSON(httr::content(dataReturn, type = "text"))
   }
 }
-
-

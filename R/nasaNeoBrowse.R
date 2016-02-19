@@ -1,17 +1,19 @@
-# NASA Astronomy Picture of the Day
+# NASA Near Earth Object Browse
+# Browse the overall Asteroid data-set
 #
 # Example:
-# apod <- nasaApod(nasaApiKey = "DEMO_KEY", date = "yyyy-mm-dd")
+# neobrowse <- nasaNeoBrowse(nasaApiKey = "DEMO_KEY")
 #
 # Obtain a NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-nasaApod <- function(nasaApiKey, date = "") {
-  reqDate <- paste("&date=", date, sep = "")
-  url = "https://api.nasa.gov/planetary/apod?api_key="
+nasaNeoBrowse <- function(nasaApiKey) {
+
+  url = "https://api.nasa.gov/neo/rest/v1/neo/browse?"
+  nasaApiKey = paste("&api_key=", nasaApiKey, sep = "")
 
   dataReturn <-
-    httr::GET(paste(url, nasaApiKey, reqDate, sep = ""))
+    httr::GET(paste(url, nasaApiKey, sep = ""))
 
   if (httr::status_code(dataReturn) != "200") {
     badReturn <-
