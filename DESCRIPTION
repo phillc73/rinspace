@@ -1,10 +1,26 @@
 Package: rinspace
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1
-Date: 2016-02-12
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: R in Space
+Version: 0.0.1
+Date: 2016-02-21
+Authors@R: person("Phill", "Clarke", email = "phill@starkingdom.co.uk",
+    role = c("aut", "cre"))
+Maintainer: Phill Clarke <phill@starkingdom.co.uk>
+Description: Provides convenience functions for many astronomy related
+APIs.
+Depends:
+    R (>= 3.2.3)
+License: MIT + file LICENSE
+URL: https://github.com/phillc73/rinspace
+BugReports: http://www.github.com/phillc73/rinspace/issues
 LazyData: TRUE
+Imports:
+    httr (>= 1.0.0),
+    jsonlite (>= 0.9.19),
+    openssl (>= 0.9.1),
+    tools (>= 3.2.3)
+Suggests:
+    knitr (>= 1.12),
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
