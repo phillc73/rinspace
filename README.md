@@ -16,6 +16,7 @@ Currently available APIs returns include -
 [Open-Notify](http://open-notify.org/):
 
 * ISS Location
+* ISS Pass Times
 * People in Space
 
 [![Inspiration](http://img.youtube.com/vi/reBzU8E_Ajk/0.jpg)](https://youtu.be/XnUoWa0VGRE)
