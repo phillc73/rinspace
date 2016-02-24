@@ -16,11 +16,9 @@ issPassTimes <- function(lat, lon, alt = "", passes = "") {
     httr::GET(paste(url, lat, lon, alt, passes, sep = ""))
 
   if (httr::status_code(dataReturn) != "200") {
-    badReturn <-
-      jsonlite::fromJSON(httr::content(dataReturn,type = "text"))
     stop(
       "\nSomething went wrong. Please check the function options to ensure valid values. \n",
-      "\nStatus Code: ", badReturn$code, "\nMessage: ", badReturn$message
+      "\nStatus Code: ", httr::status_code(dataReturn)
     )
 
   } else {
