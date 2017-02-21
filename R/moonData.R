@@ -15,7 +15,7 @@ moonData <- function(timestamp = "1456419245") {
   timestamp = paste("/", timestamp, sep = "")
 
   dataReturn <-
-    httr::GET(paste(url, timestamp, sep = ""), user_agent("Mozilla/5"))
+    httr::GET(paste(url, timestamp, sep = ""), httr::user_agent("Mozilla/5"))
 
   if (httr::status_code(dataReturn) != "200") {
     stop(
