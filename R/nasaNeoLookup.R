@@ -2,12 +2,14 @@
 # Browse the overall Asteroid data-set
 #
 # Example:
-# neolookup <- nasaNeoLookup(asteroidId = "2315020", nasaApiKey = "DEMO_KEY")
+# neolookup <- nasaNeoLookup(asteroidId = "2315020")
 #
-# Obtain a NASA API Key here:
+# This function defaults to using the NASA DEMO_KEY.
+#
+# Obtain your own NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-nasaNeoLookup <- function(nasaApiKey, asteroidId) {
+nasaNeoLookup <- function(nasaApiKey = "DEMO_KEY", asteroidId) {
 
   url = "https://api.nasa.gov/neo/rest/v1/neo/"
   nasaApiKey = paste("?api_key=", nasaApiKey, sep = "")

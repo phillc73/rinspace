@@ -1,12 +1,14 @@
 # NASA Astronomy Picture of the Day
 #
 # Example:
-# apod <- nasaApod(nasaApiKey = "DEMO_KEY", date = "yyyy-mm-dd")
+# apod <- nasaApod(date = "yyyy-mm-dd")
 #
-# Obtain a NASA API Key here:
+# This function defaults to using the NASA DEMO_KEY.
+#
+# Obtain your own NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-nasaApod <- function(nasaApiKey, date = "") {
+nasaApod <- function(nasaApiKey = "DEMO_KEY", date = "") {
   reqDate <- paste("&date=", date, sep = "")
   url = "https://api.nasa.gov/planetary/apod?api_key="
 

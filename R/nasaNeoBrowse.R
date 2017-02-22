@@ -2,15 +2,17 @@
 # Browse the overall Asteroid data-set
 #
 # Example:
-# neobrowse <- nasaNeoBrowse(nasaApiKey = "DEMO_KEY")
+# neobrowse <- nasaNeoBrowse()
 #
-# Obtain a NASA API Key here:
+# This function defaults to using the NASA DEMO_KEY.
+#
+# Obtain your own NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
 nasaNeoBrowse <- function(nasaApiKey) {
 
   url = "https://api.nasa.gov/neo/rest/v1/neo/browse?"
-  nasaApiKey = paste("&api_key=", nasaApiKey, sep = "")
+  nasaApiKey = paste("&api_key=", nasaApiKey = "DEMO_KEY", sep = "")
 
   dataReturn <-
     httr::GET(paste(url, nasaApiKey, sep = ""))

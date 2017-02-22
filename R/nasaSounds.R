@@ -5,12 +5,14 @@
 # This will likely change in the stable version of the API.
 #
 # Example:
-# sounds <- nasaSounds(query = "apollo", nasaApiKey = "DEMO_KEY")
+# sounds <- nasaSounds(query = "apollo")
 #
-# Obtain a NASA API Key here:
+# This function defaults to using the NASA DEMO_KEY.
+#
+# Obtain your own NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-nasaSounds <- function(query = "", limit = "10", nasaApiKey) {
+nasaSounds <- function(query = "", limit = "10", nasaApiKey = "DEMO_KEY") {
 
   url = "https://api.nasa.gov/planetary/sounds?"
   query = paste("query=", query, sep = "")

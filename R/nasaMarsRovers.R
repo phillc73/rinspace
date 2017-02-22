@@ -4,22 +4,24 @@
 # Note that the download URLs in the returned object require soundcloud authentication to access the files.
 # This will likely change in the stable version of the API.
 #
+#
 # Examples:
-# marsRovers <- nasaMarsRovers(rover = "spirit", earthDate = "2016-01-19",
-#                              camera = "pancam", nasaApiKey = "DEMO_KEY")
+# marsRovers <- nasaMarsRovers(rover = "spirit", earthDate = "2006-10-27",
+#                              camera = "pancam")
 #
 # marsRovers <- nasaMarsRovers(rover = "curiosity", sol = "1000",
-#                              camera = "rhaz", nasaApiKey = "DEMO_KEY")
+#                              camera = "rhaz")
 #
 #marsRovers <- nasaMarsRovers(rover = "opportunity", sol = "10",
-#                             page = "5", nasaApiKey = "DEMO_KEY")
+#                             page = "5")
 #
-# Obtain a NASA API Key here:
+# This function defaults to using the NASA DEMO_KEY.
+#
+# Obtain your own NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-
 nasaMarsRovers <-
-  function(rover, sol = NULL, earthDate = NULL, camera = NULL, page = "1", nasaApiKey) {
+  function(rover, sol = NULL, earthDate = NULL, camera = NULL, page = "1", nasaApiKey = "DEMO_KEY") {
     `%notin%` <- function(x,y)
       ! (x %in% y)
 

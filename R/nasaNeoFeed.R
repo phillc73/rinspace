@@ -2,13 +2,15 @@
 # Retrieve a list of Asteroids based on their closest approach date to Earth.
 #
 # Example:
-# neofeed <- nasaNeoFeed(nasaApiKey = "DEMO_KEY", startDate = "yyyy-mm-dd")
+# neofeed <- nasaNeoFeed(startDate = "yyyy-mm-dd")
 # Parameter endDate defaults to seven days after startDate and cannot be more than seven days later.
 #
-# Obtain a NASA API Key here:
+# This function defaults to using the NASA DEMO_KEY.
+#
+# Obtain your own NASA API Key here:
 # https://api.nasa.gov/index.html#apply-for-an-api-key
 
-nasaNeoFeed <- function(nasaApiKey, startDate, endDate = "") {
+nasaNeoFeed <- function(nasaApiKey = "DEMO_KEY", startDate, endDate = "") {
 
   url = "https://api.nasa.gov/neo/rest/v1/feed?"
   startDate = paste("start_date=", startDate, sep = "")
