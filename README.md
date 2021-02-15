@@ -4,7 +4,7 @@ A collection of R functions returning interesting stuff from space. One day.
 
 Currently available APIs returns include - 
 
-[NASA](https://api.nasa.gov/api.html):
+[NASA](https://api.nasa.gov/):
 
 * Astronomy Picture of the Day
 * Near Earth Objects Feed
@@ -18,10 +18,6 @@ Currently available APIs returns include -
 * ISS Location
 * ISS Pass Times
 * People in Space
-
-[Burning Soul](http://www.burningsoul.in/apis/moon)
-
-* Moon Data
 
 [![Inspiration](http://img.youtube.com/vi/reBzU8E_Ajk/0.jpg)](https://youtu.be/XnUoWa0VGRE)
 
